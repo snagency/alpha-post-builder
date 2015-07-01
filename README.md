@@ -20,7 +20,7 @@ Suppose you got some kind of hash response from any social network.
 
 Then just pass it to `#filter` method any you would get resulting hash with `:user` and `:post` values coerced into common format
 
-    AlphaPostBuilder.filter('twitter', result)
+    AlphaPostBuilder.filter(:twitter, result)
 
 Or you can use corresponding builder directly
 
@@ -30,12 +30,12 @@ Currently there are following builders and its classes
 
 |name         |class                                |
 |-------------|-------------------------------------|
-|`direct_url` |`AlphaPostBuilder::DirectUrlBuilder` |
-|`facebook`   |`AlphaPostBuilder::FacebookBuilder`  |
-|`instagram`  |`AlphaPostBuilder::InstagramBuilder` |
-|`twitter`    |`AlphaPostBuilder::TwitterBuilder`   |
-|`vkontakte`  |`AlphaPostBuilder::VkontakteBuilder` |
-|`yandex`     |`AlphaPostBuilder::YandexBuilder`    |
+|`:direct_url` |`AlphaPostBuilder::DirectUrlBuilder` |
+|`:facebook`   |`AlphaPostBuilder::FacebookBuilder`  |
+|`:instagram`  |`AlphaPostBuilder::InstagramBuilder` |
+|`:twitter`    |`AlphaPostBuilder::TwitterBuilder`   |
+|`:vkontakte`  |`AlphaPostBuilder::VkontakteBuilder` |
+|`:yandex`     |`AlphaPostBuilder::YandexBuilder`    |
 
 ## Sample output
 

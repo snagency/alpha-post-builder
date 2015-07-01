@@ -4,7 +4,7 @@ require 'alpha_post_builder/builders/base_builder'
 
 module AlphaPostBuilder
   def self.builder_class_name(network)
-    "#{network}_builder".classify
+    "alpha_post_builder/#{network}_builder".classify
   end
 
   def self.builder_class_path(network)
@@ -13,7 +13,7 @@ module AlphaPostBuilder
 
   NETWORKS = %i[direct_url facebook instagram twitter vkontakte yandex]
   NETWORKS.each do |network|
-    autoload builder_class_name(network).to_sym, builder_class_path(network)
+    autoload "#{network}_builder".classify.to_sym, builder_class_path(network)
   end
 
   def self.filter(network, data)
