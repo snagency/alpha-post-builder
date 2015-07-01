@@ -6,7 +6,7 @@ RSpec.shared_examples "a builder" do |network|
   end
 
   describe '#filter' do
-    context ':user' do
+    context 'user' do
       let(:user) { subject.filter[:user] }
 
       it { expect(user).to include(:uid) }
@@ -19,8 +19,8 @@ RSpec.shared_examples "a builder" do |network|
       it { expect(user).to include(:followers_count) }
     end
 
-    context ':post' do
-      let(:post) { subject.filter[:post] }
+    context 'post' do
+      let(:post) { subject.filter }
 
       it { expect(post).to include(:created_time) }
       it { expect(post).to include(:title) }
