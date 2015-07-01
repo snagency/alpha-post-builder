@@ -41,6 +41,15 @@ Currently there are following builders and its classes
 
 ```ruby
 {
+  title: nil,
+  network: "twitter",
+  location: "Wisconsin, USA",
+  media_type: nil,
+  image_url: nil,
+  created_time: 1435711203,
+  text: "The Foolish Mortals #freebandnames",
+  post_id: "249279667666817024",
+  url: nil,
   user: {
     location: "Wisconsin, USA",
     friends_count: 249,
@@ -50,17 +59,6 @@ Currently there are following builders and its classes
     url: "http://www.omnitarian.me",
     uid: "Omnitarian",
     name: "Marty Elmer"
-  },
-  post:  {
-    title: nil,
-    network: "twitter",
-    location: "Wisconsin, USA",
-    media_type: nil,
-    image_url: nil,
-    created_time: 1435711203,
-    text: "The Foolish Mortals #freebandnames",
-    post_id: "249279667666817024",
-    url: nil
   }
 }
 ````

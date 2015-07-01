@@ -20,4 +20,9 @@ module AlphaPostBuilder
     raise "Unrecognized network: #{network}" unless NETWORKS.include?(network)
     builder_class_name(network).constantize.filter(data)
   end
+
+  def self.filter_collection(network, data)
+    raise "Unrecognized network: #{network}" unless NETWORKS.include?(network)
+    builder_class_name(network).constantize.filter_collection(data)
+  end
 end

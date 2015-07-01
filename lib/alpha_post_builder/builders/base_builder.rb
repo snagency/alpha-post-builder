@@ -5,6 +5,10 @@ module AlphaPostBuilder
       def filter(data)
         new(data).filter
       end
+
+      def filter_collection(array_of_posts=[])
+        array_of_posts.map {|data| filter(data)}
+      end
     end
 
     def initialize(data)
@@ -12,10 +16,7 @@ module AlphaPostBuilder
     end
 
     def filter
-      {
-        user: default_user_attributes.merge(user_attributes),
-        post: default_post_attributes.merge(post_attributes)
-      }
+      filtered_post_attributes.merge(user: filtered_user_attributes)
     end
 
     def network
@@ -51,6 +52,14 @@ module AlphaPostBuilder
         media_type: nil,
         image_url: nil
       }
+    end
+
+    def filtered_post_attributes
+      default_post_attributes.merge(post_attributes)
+    end
+
+    def filtered_user_attributes
+      default_user_attributes.merge(user_attributes)
     end
   end
 end
