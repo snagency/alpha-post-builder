@@ -15,7 +15,7 @@ module AlphaPostBuilder
 
     def post_attributes
       {
-        created_time: data[:created_at].to_i,
+        created_time: created_at,
         title:        nil,
         text:         data[:text],
         post_id:      data[:id].to_s,
@@ -41,6 +41,18 @@ module AlphaPostBuilder
         "#{data[:place].try(:[],:full_name)} (#{data[:coordinates][:coordinates].join(',')})"
       elsif data[:user][:location]
         data[:user][:location]
+      end
+    end
+
+    def created_at
+      if data[:created_at].to_i.to_s == data[:created_at]
+        data[:created_at].to_i
+      else
+        begin
+          Time.parse(data[:created_at]).to_i
+        rescue
+          nil
+        end
       end
     end
   end
